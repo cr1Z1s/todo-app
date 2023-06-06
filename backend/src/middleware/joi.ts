@@ -21,7 +21,6 @@ export const Schemas = {
   todo: {
     create: Joi.object<Todo>({
       text: Joi.string().required(),
-      completed: Joi.boolean().required(),
     }),
     update: Joi.object<Todo>({
       text: Joi.string().required(),

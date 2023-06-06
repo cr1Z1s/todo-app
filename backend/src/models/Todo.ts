@@ -10,7 +10,7 @@ export interface TodoDocument extends Todo, Document {}
 const TodoSchema: Schema = new Schema<TodoDocument>(
   {
     text: { type: String, required: true },
-    completed: { type: Boolean },
+    completed: { type: Boolean, required: true },
   },
   {
     timestamps: true,

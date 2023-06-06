@@ -3,12 +3,12 @@ import mongoose from "mongoose";
 import Todo from "../models/Todo";
 
 const createTodo = (req: Request, res: Response, next: NextFunction) => {
-  const { text, completed } = req.body;
+  const { text } = req.body;
 
   const todo = new Todo({
     _id: new mongoose.Types.ObjectId(),
     text,
-    completed,
+    completed: false,
   });
 
   return todo

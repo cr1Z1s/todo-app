@@ -1,7 +1,8 @@
-import { config } from "./config/config";
+import cors from "cors";
 import express from "express";
 import http from "http";
 import mongoose from "mongoose";
+import { config } from "./config/config";
 import Logger from "./library/Logger";
 import todoRoutes from "./routes/Todo";
 
@@ -35,6 +36,8 @@ const StartServer = () => {
 
   router.use(express.urlencoded({ extended: true }));
   router.use(express.json());
+
+  router.use(cors());
 
   router.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
